@@ -56,7 +56,8 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="154dp"
+                    android:id="@+id/tv_table_team"
+                    android:layout_width="170dp"
                     android:layout_height="match_parent"
                     android:textSize="16sp"
                     android:textColor="@color/white"
@@ -67,11 +68,51 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     tools:text="Team"/>
 
+                <TextView
+                    android:id="@+id/tv_table_matches"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@id/tv_table_team"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="Spiele"/>
+
+                <TextView
+                    android:id="@+id/tv_table_goals"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@id/tv_table_matches"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="Tore"/>
+
+                <TextView
+                    android:id="@+id/tv_table_points"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="Punkte"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_table"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"

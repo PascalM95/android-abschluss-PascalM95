@@ -14,6 +14,7 @@
         tools:context=".ui.StatisticFragment">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_statistic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"

@@ -9,13 +9,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/dark_green">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cv_table"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:backgroundTint="@color/light_green"
+            android:backgroundTint="@color/dark_green"
             android:layout_margin="8dp"
             app:cardCornerRadius="0dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +28,8 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="154dp"
+                    android:id="@+id/tv_place"
+                    android:layout_width="15dp"
                     android:layout_height="match_parent"
                     android:textSize="14sp"
                     android:textColor="@color/white"
@@ -35,7 +37,55 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="1."/>
+
+                <TextView
+                    android:id="@+id/tv_team"
+                    android:layout_width="155dp"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@id/tv_place"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     tools:text="Brighton &amp; Hove Albion"/>
+
+                <TextView
+                    android:id="@+id/tv_matches"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@id/tv_team"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="33"/>
+
+                <TextView
+                    android:id="@+id/tv_goals"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    app:layout_constraintStart_toEndOf="@id/tv_matches"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="100:100"/>
+
+                <TextView
+                    android:id="@+id/tv_points"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:text="100"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
