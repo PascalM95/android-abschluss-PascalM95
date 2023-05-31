@@ -6,4 +6,11 @@
     <string name="red_cards">Rote Karten</string>
     <string name="table">Tabelle</string>
     <string name="statistics">Statistiken</string>
+    <string name="premier_league">Premier League</string>
+    <string name="bundesliga">Bundesliga</string>
+    <string name="ligue_1">Ligue 1 Uber Eats</string>
+    <string name="la_liga">LaLiga</string>
+    <string name="serie_a">Serie A</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

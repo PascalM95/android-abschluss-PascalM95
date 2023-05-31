@@ -25,13 +25,7 @@ class LeagueAdapter (
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val league = dataset[position]
-
         TODO()
-
-        holder.binding.cvLeague.setOnClickListener {
-            val navController = holder.binding.cvLeague.findNavController()
-            navController.navigate(HomeFragmentDirections.actionHomeFragmentToTableFragment())
-        }
     }
 
     override fun getItemCount(): Int {

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.matchtrackerpro.R
 
-class StatisticFragment : Fragment() {
+
+class TeamFragment : Fragment() {
 
 }
