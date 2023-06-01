@@ -1,11 +1,14 @@
 package com.example.matchtrackerpro.data.model
 
 data class Team (
-    val id: Long,
-    val img: Int,
-    val name: String,
+    val teamId: Int,
+    val img: String,
+    val teamName: String,
     val games: Int,
-    val goalsShoot: Int,
-    val goalsConceded: Int,
-    val points: Int
+    val goals: String,
+    val points: Int,
+    val founding: String,
+    val colors: String,
+    val stadium: String,
+    val seats: String
         )
