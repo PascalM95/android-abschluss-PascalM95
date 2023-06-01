@@ -52,45 +52,32 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_teamName"
             tools:text="03. Juni 1892"/>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/dark_green"
-            app:cardCornerRadius="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_founding">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/tv_teamColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="@string/teamColor"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toStartOf="@id/tv_colors"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_founding" />
 
                 <TextView
                     android:id="@+id/tv_colors"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginStart="8dp"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     app:layout_constraintStart_toEndOf="@id/tv_teamColor"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_founding"
                     tools:text="Schwarz, Weiß, Grün" />
 
                 <TextView
@@ -130,27 +117,18 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_teamStadium"/>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-        
-        
-
-
-
-        <TextView
-            android:id="@+id/tv_seats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            android:textAlignment="center"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_stadium"
-            tools:text="50,000"/>
+                <TextView
+                    android:id="@+id/tv_seats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_teamSeats"
+                    app:layout_constraintTop_toBottomOf="@id/tv_stadium"
+                    tools:text="50,000"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_back"
