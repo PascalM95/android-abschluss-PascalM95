@@ -1,10 +1,10 @@
 package com.example.matchtrackerpro.data
 
-import com.example.matchtrackerpro.api.MatchTrackerApi
+import com.example.matchtrackerpro.data.remote.MatchTrackerApi
 
 const val TAG = "Repository"
 
-class Repository () {
+class Repository (private val api: MatchTrackerApi) {
 
     //todo
 }
