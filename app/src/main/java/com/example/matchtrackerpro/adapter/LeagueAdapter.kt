@@ -11,22 +11,27 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.matchtrackerpro.R
+import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.data.datamodels.League
 import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.databinding.LeagueItemBinding
 import com.example.matchtrackerpro.ui.HomeFragmentDirections
 
 class LeagueAdapter (
-    private val dataset: List<League>
+    private val dataset: List<League>,
+    private val viewModel: SharedViewModel
     ): RecyclerView.Adapter<LeagueAdapter.ItemViewHolder>() {
 
-    class ItemViewHolder (val binding: LeagueItemBinding): RecyclerView.ViewHolder(binding.root) {
-        val imgView = binding.ivLeague
+    class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {
+        val imgView = view.findViewById<ImageView>(R.id.iv_league)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val binding = LeagueItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ItemViewHolder(binding)
+
+        val leagueAdapterLayout = LayoutInflater.from(parent.context)
+            .inflate(R.layout.league_item, parent, false)
+
+        return ItemViewHolder(leagueAdapterLayout)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
