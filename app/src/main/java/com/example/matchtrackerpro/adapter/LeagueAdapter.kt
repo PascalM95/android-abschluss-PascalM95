@@ -25,7 +25,8 @@ class LeagueAdapter (
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val league = dataset[position]
-        TODO()
+
+        holder.binding.ivLeague.setImageResource()
     }
 
     override fun getItemCount(): Int {
