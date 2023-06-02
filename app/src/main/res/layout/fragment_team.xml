@@ -92,7 +92,7 @@
                     android:textStyle="italic"
                     app:layout_constraintStart_toEndOf="@id/tv_teamColor"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Schwarz, Weiß, Grün" />
+                    tools:text="Rot" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -137,7 +137,7 @@
                     android:layout_marginStart="8dp"
                     app:layout_constraintStart_toEndOf="@id/tv_teamStadium"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Estadio Manuel Martínez Valero" />
+                    tools:text="Anfield Road" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

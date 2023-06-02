@@ -1,4 +1,4 @@
-package com.example.matchtrackerpro.data.model
+package com.example.matchtrackerpro.data.datamodels
 
 data class Team (
     val teamId: Int,
