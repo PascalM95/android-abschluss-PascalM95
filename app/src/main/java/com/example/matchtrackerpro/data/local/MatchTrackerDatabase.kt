@@ -21,8 +21,7 @@ fun getDatabase(context: Context): MatchTrackerDatabase {
                 context.applicationContext,
                 MatchTrackerDatabase::class.java,
                 "matchTracker_database"
-            )
-                .build()
+            ).build()
         }
     }
     return INSTANCE

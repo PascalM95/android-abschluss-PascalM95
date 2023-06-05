@@ -1,6 +1,7 @@
 package com.example.matchtrackerpro.adapter
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import com.example.matchtrackerpro.data.datamodels.League
 import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.databinding.LeagueItemBinding
 import com.example.matchtrackerpro.ui.HomeFragmentDirections
+import com.google.android.material.card.MaterialCardView
 
 class LeagueAdapter (
     private val dataset: List<League>,
@@ -24,6 +26,7 @@ class LeagueAdapter (
 
     class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {
         val imgView = view.findViewById<ImageView>(R.id.iv_league)
+        val cvLeague = view.findViewById<MaterialCardView>(R.id.cv_league)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -41,6 +44,13 @@ class LeagueAdapter (
 
         holder.imgView.load(imgUri) {
             transformations(RoundedCornersTransformation(10f))
+        }
+
+        holder.cvLeague.setOnClickListener {
+            val id = Bundle().apply { putInt("id", league.leagueId) }
+
+            val navController = holder.view.findNavController()
+            navController.navigate(R.id.action_homeFragment_to_tableFragment, id)
         }
     }
 

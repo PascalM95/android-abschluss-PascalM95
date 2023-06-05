@@ -1,9 +1,25 @@
 package com.example.matchtrackerpro.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Update
+import com.example.matchtrackerpro.data.datamodels.Team
 
 @Dao
 interface MatchTrackerDao {
 
-    // TODO: implement 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert (team: Team)
+
+    @Update
+    suspend fun update (team: Team)
+
+    @Query ("SELECT * FROM Team")
+    fun getTeam(): LiveData<List<Team>>
+
+    @Query("DELETE FROM Team WHERE teamId = :teamId")
+    suspend fun deleteById(teamId: Int)
 }

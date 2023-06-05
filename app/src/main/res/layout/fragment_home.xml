@@ -13,16 +13,6 @@
         android:background="@color/dark_green"
         tools:context=".ui.HomeFragment">
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_margin="8dp"
-            android:background="@color/white"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_league"
             android:layout_width="match_parent"
@@ -32,7 +22,7 @@
             app:spanCount="2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/league_item"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

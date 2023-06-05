@@ -13,17 +13,6 @@
             app:destination="@id/tableFragment" />
     </fragment>
     <fragment
-        android:id="@+id/statisticFragment"
-        android:name="com.example.matchtrackerpro.ui.StatisticFragment"
-        android:label="StatisticFragment" >
-        <action
-            android:id="@+id/action_statisticFragment_to_tableFragment"
-            app:destination="@id/tableFragment" />
-        <action
-            android:id="@+id/action_statisticFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/tableFragment"
         android:name="com.example.matchtrackerpro.ui.TableFragment"
         android:label="TableFragment" >
@@ -31,7 +20,18 @@
             android:id="@+id/action_tableFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_tableFragment_to_statisticFragment"
-            app:destination="@id/statisticFragment" />
+            android:id="@+id/action_tableFragment_to_teamFragment"
+            app:destination="@id/teamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.example.matchtrackerpro.ui.TeamFragment"
+        android:label="TeamFragment" >
+        <action
+            android:id="@+id/action_teamFragment_to_tableFragment"
+            app:destination="@id/tableFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>

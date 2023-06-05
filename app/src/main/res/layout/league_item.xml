@@ -16,7 +16,7 @@
             android:id="@+id/cv_league"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="16dp"
             android:backgroundTint="@color/white"
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
