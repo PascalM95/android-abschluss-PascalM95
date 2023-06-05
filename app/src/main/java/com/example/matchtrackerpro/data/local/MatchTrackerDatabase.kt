@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.matchtrackerpro.data.dataclasses.MatchTrackerData
+import com.example.matchtrackerpro.data.datamodels.Team
 
-@Database(entities = [MatchTrackerData::class], version = 1)
+@Database(entities = [Team::class], version = 1)
 abstract class MatchTrackerDatabase : RoomDatabase() {
 
     abstract val matchTrackerDao: MatchTrackerDao
