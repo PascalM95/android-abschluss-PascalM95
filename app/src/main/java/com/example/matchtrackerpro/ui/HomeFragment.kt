@@ -39,6 +39,6 @@ class HomeFragment() : Fragment() {
             binding.rvLeague.adapter = adapter
         }
 
-        TODO()
+
     }
 }

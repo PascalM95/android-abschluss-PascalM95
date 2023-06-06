@@ -12,16 +12,16 @@ const val TAG = "Repository"
 
 class Repository (private val api: MatchTrackerApi, private val database: MatchTrackerDatabase) {
 
-    private var _leagues = MutableLiveData<List<League>>()
-    val leagues: LiveData<List<League>>
-        get() = _leagues
+    var leagues = MutableLiveData<List<League>>()
+
+
 
     suspend fun getLeagues() {
 
         try {
-            _leagues.value = api.retrofitService.getLeagues()
+            //leagues.value = api.retrofitService.getLeagues()
         } catch (e: Exception) {
-            Log.e(TAG, "Leagues couldn't be loaded.")
+            Log.e(TAG, "Leagues couldn't be loaded. $e")
         }
     }
 }
