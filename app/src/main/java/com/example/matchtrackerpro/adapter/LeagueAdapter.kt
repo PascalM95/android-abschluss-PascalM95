@@ -25,8 +25,8 @@ class LeagueAdapter (
     ): RecyclerView.Adapter<LeagueAdapter.ItemViewHolder>() {
 
     class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {
-        val imgView = view.findViewById<ImageView>(R.id.iv_league)
-        val cvLeague = view.findViewById<MaterialCardView>(R.id.cv_league)
+        val imgView: ImageView = view.findViewById(R.id.iv_league)
+        val cvLeague: MaterialCardView = view.findViewById(R.id.cv_league)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -50,7 +50,7 @@ class LeagueAdapter (
             val id = Bundle().apply { putInt("id", league.leagueId) }
 
             val navController = holder.view.findNavController()
-            navController.navigate(R.id.action_homeFragment_to_tableFragment, id)
+            navController.navigate(R.id.action_homeFragment_to_teamOrTableFragment, id)
         }
     }
 

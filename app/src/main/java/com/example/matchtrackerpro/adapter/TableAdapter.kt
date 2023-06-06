@@ -22,12 +22,12 @@ class TableAdapter (
     ): RecyclerView.Adapter<TableAdapter.ItemViewHolder>() {
 
         class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {
-            val place = view.findViewById<TextView>(R.id.tv_place)
-            val team = view.findViewById<TextView>(R.id.tv_team)
-            val games = view.findViewById<TextView>(R.id.tv_matches)
-            val goals = view.findViewById<TextView>(R.id.tv_goals)
-            val points = view.findViewById<TextView>(R.id.tv_points)
-            val back = view.findViewById<FloatingActionButton>(R.id.fab_back)
+            val place: TextView = view.findViewById(R.id.tv_place)
+            val team: TextView = view.findViewById(R.id.tv_team)
+            val games: TextView = view.findViewById(R.id.tv_matches)
+            val goals: TextView = view.findViewById(R.id.tv_goals)
+            val points: TextView = view.findViewById(R.id.tv_points)
+            val back: FloatingActionButton = view.findViewById(R.id.fab_back)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -49,13 +49,9 @@ class TableAdapter (
 
             holder.back.setOnClickListener {
                 val navController = holder.view.findNavController()
-                navController.navigate(R.id.action_tableFragment_to_homeFragment)
+                navController.navigate(R.id.action_tableFragment_to_teamOrTableFragment)
             }
 
-            holder.team.setOnClickListener {
-                val navController = holder.view.findNavController()
-                navController.navigate(R.id.action_tableFragment_to_teamFragment)
-            }
         }
 
         override fun getItemCount(): Int {

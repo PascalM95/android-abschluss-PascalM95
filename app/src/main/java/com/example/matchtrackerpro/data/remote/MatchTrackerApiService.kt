@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 import retrofit2.http.GET
 
-const val BASE_URL = "https://public.syntax-institut.de/apps/batch6/PascalMoench/MatchTrackerPro.json"
+const val BASE_URL = "https://public.syntax-institut.de/apps/batch6/PascalMoench/MatchTrackerPro.json/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -22,7 +22,6 @@ private val retrofit = Retrofit.Builder()
 interface MatchTrackerApiService {
     @GET("league")
     suspend fun getLeagues(): List<League>
-
 }
 
 object MatchTrackerApi {

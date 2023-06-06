@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.databinding.FragmentTeamBinding
 
-
-class TeamFragment : Fragment() {
+class DetailTeamFragment : Fragment() {
 
     private val viewModel: SharedViewModel by activityViewModels()
 
@@ -23,15 +23,15 @@ class TeamFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_team, container, false
-        )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail_team, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        TODO()
+        binding.fabBack.setOnClickListener {
+            findNavController().navigate(R.id.action_detailTeamFragment_to_teamFragment)
+        }
     }
 }
