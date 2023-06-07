@@ -12,14 +12,14 @@ import com.example.matchtrackerpro.data.datamodels.Team
 interface MatchTrackerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert (team: Team)
+    suspend fun insert (teams: List<Team>)
 
     @Update
-    suspend fun update (team: Team)
+    suspend fun update (teams: List<Team>)
 
     @Query ("SELECT * FROM Team")
-    fun getTeam(): LiveData<List<Team>>
+    fun getAllTeams(): LiveData<List<Team>>
 
-    @Query("DELETE FROM Team WHERE teamId = :teamId")
-    suspend fun deleteById(teamId: Int)
+    @Query ("DELETE FROM Team WHERE teamId = :teamId")
+    suspend fun deleteById (teamId: Int)
 }

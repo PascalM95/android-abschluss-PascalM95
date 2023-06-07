@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_detailTeamFragment_to_teamFragment"
             app:destination="@id/teamFragment" />
+        <argument
+            android:name="teamId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/teamFragment"

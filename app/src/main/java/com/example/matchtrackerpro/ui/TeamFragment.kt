@@ -9,6 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
+import com.example.matchtrackerpro.data.Repository
+import com.example.matchtrackerpro.data.local.MatchTrackerDatabase
+import com.example.matchtrackerpro.data.remote.MatchTrackerApi
 import com.example.matchtrackerpro.databinding.FragmentTeamBinding
 
 
@@ -32,6 +35,6 @@ class TeamFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        TODO()
+        val teams = Repository(MatchTrackerApi, MatchTrackerDatabase.getDatabase(requireContext())).teams
     }
 }
