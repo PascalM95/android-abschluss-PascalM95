@@ -33,7 +33,6 @@ class SharedViewModel (application: Application): AndroidViewModel(application) 
     }
 
     fun getLeagueById (leagueId: Int) {
-
         viewModelScope.launch {
             currentLeague.value = repository.getLeagueById(leagueId)
         }

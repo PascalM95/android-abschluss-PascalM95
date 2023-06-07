@@ -44,18 +44,11 @@ class DetailTeamFragment : Fragment() {
 
         val team = viewModel.currentLeague.value?.teams?.find { it.teamId == teamId }
 
-
-
         binding.ivTeamLogo.load(team!!.img)
-
         binding.tvTeamName.text = team.teamName
-
         binding.tvFounding.text = team.founding
-
         binding.tvColors.text = team.colors
-
         binding.tvStadium.text = team.stadium
-
         binding.tvSeats.text = team.seats
 
         binding.fabBack.setOnClickListener {
