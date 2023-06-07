@@ -3,9 +3,7 @@ package com.example.matchtrackerpro.data.datamodels
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
 data class Team (
-    @PrimaryKey
     val teamId: Int,
     val img: String,
     val teamName: String,

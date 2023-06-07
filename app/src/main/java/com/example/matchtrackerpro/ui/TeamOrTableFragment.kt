@@ -15,6 +15,8 @@ class TeamOrTableFragment : Fragment() {
 
     private lateinit var binding: FragmentTeamOrTableBinding
 
+    private var leagueId: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,16 +31,20 @@ class TeamOrTableFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        arguments?.let {
+            leagueId = it.getInt("leagueId")
+        }
+
         binding.cvTeams.setOnClickListener {
-            findNavController().navigate(R.id.action_teamOrTableFragment_to_teamFragment)
+            findNavController().navigate(TeamOrTableFragmentDirections.actionTeamOrTableFragmentToTeamFragment(leagueId))
         }
 
         binding.cvTable.setOnClickListener {
-            findNavController().navigate(R.id.action_teamOrTableFragment_to_tableFragment)
+            findNavController().navigate(TeamOrTableFragmentDirections.actionTeamOrTableFragmentToTableFragment(leagueId))
         }
 
         binding.fabBack.setOnClickListener {
-            findNavController().navigate(R.id.action_teamOrTableFragment_to_homeFragment)
+            findNavController().navigateUp()
         }
     }
 }

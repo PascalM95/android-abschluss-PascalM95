@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_tableFragment_to_teamOrTableFragment"
             app:destination="@id/teamOrTableFragment" />
+        <argument
+            android:name="leagueId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/teamOrTableFragment"
@@ -33,6 +36,9 @@
         <action
             android:id="@+id/action_teamOrTableFragment_to_teamFragment"
             app:destination="@id/teamFragment" />
+        <argument
+            android:name="leagueId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/detailTeamFragment"
@@ -55,5 +61,8 @@
         <action
             android:id="@+id/action_teamFragment_to_teamOrTableFragment"
             app:destination="@id/teamOrTableFragment" />
+        <argument
+            android:name="leagueId"
+            app:argType="integer" />
     </fragment>
 </navigation>

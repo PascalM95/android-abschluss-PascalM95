@@ -21,7 +21,6 @@ import com.google.android.material.card.MaterialCardView
 
 class LeagueAdapter (
     private val dataset: List<League>,
-    private val viewModel: SharedViewModel
     ): RecyclerView.Adapter<LeagueAdapter.ItemViewHolder>() {
 
     class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {

@@ -17,25 +17,29 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
     suspend fun getLeagues() {
 
         try {
-            leagues.value = api.retrofitService.getLeagues()
+            database.matchTrackerDao.insert(api.retrofitService.getLeagues())
         } catch (e: Exception) {
             Log.e(TAG, "Leagues couldn't be loaded. $e")
         }
     }
 
-    suspend fun insert (teams: List<Team>) {
+    suspend fun getLeagueById(leagueId: Int): League {
+        return database.matchTrackerDao.getLeagueById(leagueId)
+    }
+
+    suspend fun insert (leagues: List<League>) {
 
         try {
-            database.matchTrackerDao.insert(teams)
+            database.matchTrackerDao.insert(leagues)
         } catch (e: Exception) {
             Log.d(TAG, "Failed to insert into Database: $e")
         }
     }
 
-    suspend fun update (teams: List<Team>) {
+    suspend fun update (leagues: List<League>) {
 
         try {
-            database.matchTrackerDao.update(teams)
+            database.matchTrackerDao.update(leagues)
         } catch (e: Exception) {
             Log.d(TAG, "Failed to update Database: $e")
         }

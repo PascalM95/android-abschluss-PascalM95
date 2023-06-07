@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import coil.load
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.databinding.FragmentDetailTeamBinding
@@ -23,10 +24,6 @@ class DetailTeamFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        arguments?.let {
-            teamId = it.getInt("teamId")
-        }
     }
 
     override fun onCreateView(
@@ -41,21 +38,28 @@ class DetailTeamFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //todo
-        binding.ivTeamLogo.setImageResource(0)
+        arguments?.let {
+            teamId = it.getInt("teamId")
+        }
 
-        binding.tvTeamName.setText(0)
+        val team = viewModel.currentLeague.value?.teams?.find { it.teamId == teamId }
 
-        binding.tvFounding.setText(0)
 
-        binding.tvColors.setText(0)
 
-        binding.tvStadium.setText(0)
+        binding.ivTeamLogo.load(team!!.img)
 
-        binding.tvSeats.setText(0)
+        binding.tvTeamName.text = team.teamName
+
+        binding.tvFounding.text = team.founding
+
+        binding.tvColors.text = team.colors
+
+        binding.tvStadium.text = team.stadium
+
+        binding.tvSeats.text = team.seats
 
         binding.fabBack.setOnClickListener {
-            findNavController().navigate(DetailTeamFragmentDirections.actionDetailTeamFragmentToTeamFragment())
+            findNavController().navigateUp()
         }
     }
 }

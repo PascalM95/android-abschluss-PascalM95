@@ -18,7 +18,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class TableAdapter (
     private val dataset: List<Team>,
-    private val viewModel: SharedViewModel
     ): RecyclerView.Adapter<TableAdapter.ItemViewHolder>() {
 
         class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {
@@ -27,7 +26,6 @@ class TableAdapter (
             val games: TextView = view.findViewById(R.id.tv_matches)
             val goals: TextView = view.findViewById(R.id.tv_goals)
             val points: TextView = view.findViewById(R.id.tv_points)
-            val back: FloatingActionButton = view.findViewById(R.id.fab_back)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -46,12 +44,6 @@ class TableAdapter (
             holder.games.text = team.games.toString()
             holder.goals.text = team.goals
             holder.points.text = team.points.toString()
-
-            holder.back.setOnClickListener {
-                val navController = holder.view.findNavController()
-                navController.navigate(R.id.action_tableFragment_to_teamOrTableFragment)
-            }
-
         }
 
         override fun getItemCount(): Int {

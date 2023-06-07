@@ -12,11 +12,11 @@ import coil.transform.RoundedCornersTransformation
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.data.datamodels.Team
+import com.example.matchtrackerpro.ui.TeamFragmentDirections
 import com.google.android.material.card.MaterialCardView
 
 class TeamAdapter (
     private val dataset: List<Team>,
-    private val viewModel: SharedViewModel
     ):RecyclerView.Adapter<TeamAdapter.ItemViewHolder>() {
 
         class ItemViewHolder ( val view: View): RecyclerView.ViewHolder(view) {
@@ -43,7 +43,7 @@ class TeamAdapter (
 
         holder.cvTeam.setOnClickListener {
             val navController = holder.view.findNavController()
-            navController.navigate(R.id.action_teamFragment_to_teamOrTableFragment)
+            navController.navigate(TeamFragmentDirections.actionTeamFragmentToDetailTeamFragment(team.teamId))
         }
     }
 

@@ -7,25 +7,25 @@ import androidx.room.RoomDatabase
 import com.example.matchtrackerpro.data.datamodels.League
 import com.example.matchtrackerpro.data.datamodels.Team
 
-@Database(entities = [Team::class], version = 1)
+@Database(entities = [League::class], version = 1)
 abstract class MatchTrackerDatabase : RoomDatabase() {
 
     abstract val matchTrackerDao: MatchTrackerDao
-}
 
-private lateinit var INSTANCE: MatchTrackerDatabase
+    companion object {
+        private lateinit var dbInstance: MatchTrackerDatabase
 
-fun getDatabase(context: Context): MatchTrackerDatabase {
-    synchronized(MatchTrackerDatabase::class.java) {
-        if (!::INSTANCE.isInitialized) {
-            INSTANCE = Room.databaseBuilder(
-                context.applicationContext,
-                MatchTrackerDatabase::class.java,
-                "matchTracker_database",
-            )
-                .build()
+        fun getDatabase(context: Context): MatchTrackerDatabase {
+            synchronized(MatchTrackerDatabase::class.java) {
+                if(!::dbInstance.isInitialized) {
+                    dbInstance = Room.databaseBuilder(
+                        context.applicationContext,
+                        MatchTrackerDatabase::class.java,
+                        "matchTracker_database",
+                    ).build()
+                }
+            }
+            return dbInstance
         }
     }
-    return INSTANCE
 }
-

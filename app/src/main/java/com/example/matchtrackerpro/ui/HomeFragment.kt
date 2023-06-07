@@ -35,10 +35,8 @@ class HomeFragment() : Fragment() {
         viewModel.loadLeagues()
 
         viewModel.leagues.observe(viewLifecycleOwner) {
-            val adapter = LeagueAdapter(it, viewModel)
+            val adapter = LeagueAdapter(it)
             binding.rvLeague.adapter = adapter
         }
-
-
     }
 }

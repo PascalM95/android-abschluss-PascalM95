@@ -6,20 +6,24 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.example.matchtrackerpro.data.datamodels.League
 import com.example.matchtrackerpro.data.datamodels.Team
 
 @Dao
 interface MatchTrackerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert (teams: List<Team>)
+    suspend fun insert (leagues: List<League>)
 
     @Update
-    suspend fun update (teams: List<Team>)
+    suspend fun update (leagues: List<League>)
 
-    @Query ("SELECT * FROM Team")
-    fun getAllTeams(): LiveData<List<Team>>
+    @Query("SELECT * FROM matchTracker_database WHERE leagueId = :leagueId")
+    suspend fun getLeagueById(leagueId: Int): League
 
-    @Query ("DELETE FROM Team WHERE teamId = :teamId")
-    suspend fun deleteById (teamId: Int)
+    @Query("SELECT * FROM matchTracker_database")
+    fun getAllLeagues(): LiveData<List<League>>
+
+    @Query("DELETE FROM matchTracker_database WHERE leagueId = :leagueId")
+    suspend fun deleteById (leagueId: Int)
 }
