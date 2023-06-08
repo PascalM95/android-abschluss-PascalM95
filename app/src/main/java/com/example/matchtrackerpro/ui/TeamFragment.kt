@@ -12,6 +12,8 @@ import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.adapter.TableAdapter
 import com.example.matchtrackerpro.adapter.TeamAdapter
 import com.example.matchtrackerpro.data.Repository
+import com.example.matchtrackerpro.data.datamodels.Team
+import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.data.local.MatchTrackerDatabase
 import com.example.matchtrackerpro.data.remote.MatchTrackerApi
 import com.example.matchtrackerpro.databinding.FragmentTeamBinding
@@ -24,6 +26,8 @@ class TeamFragment : Fragment() {
     private lateinit var binding: FragmentTeamBinding
 
     private var leagueId = 0
+
+    private lateinit var teams: List<TeamData>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,12 +48,10 @@ class TeamFragment : Fragment() {
         }
 
         if (leagueId != 0) {
-            viewModel.getLeagueById(leagueId)
+            teams = viewModel.getTeams(leagueId)
         }
 
-        viewModel.currentLeague.observe(viewLifecycleOwner) {
-            val adapter = TeamAdapter(it.teams)
-            binding.rvTeams.adapter = adapter
-        }
+        val adapter = TeamAdapter(teams)
+        binding.rvTeams.adapter = adapter
     }
 }

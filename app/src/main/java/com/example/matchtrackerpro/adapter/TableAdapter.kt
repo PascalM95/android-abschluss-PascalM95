@@ -12,12 +12,13 @@ import coil.transform.RoundedCornersTransformation
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.data.datamodels.Team
+import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.databinding.LeagueItemBinding
 import com.example.matchtrackerpro.databinding.TableItemBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class TableAdapter (
-    private val dataset: List<Team>,
+    private val dataset: List<TeamData>,
     ): RecyclerView.Adapter<TableAdapter.ItemViewHolder>() {
 
         class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {

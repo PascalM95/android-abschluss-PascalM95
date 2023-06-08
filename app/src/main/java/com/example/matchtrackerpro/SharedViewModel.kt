@@ -8,7 +8,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.matchtrackerpro.data.Repository
 import com.example.matchtrackerpro.data.datamodels.League
+import com.example.matchtrackerpro.data.datamodels.LeagueData
 import com.example.matchtrackerpro.data.datamodels.Team
+import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.data.local.MatchTrackerDatabase.Companion.getDatabase
 import com.example.matchtrackerpro.data.remote.MatchTrackerApi
 import kotlinx.coroutines.launch
@@ -23,7 +25,7 @@ class SharedViewModel (application: Application): AndroidViewModel(application) 
 
     var leagues = repository.leagues
 
-    var currentLeague = MutableLiveData<League>()
+    var currentLeague = MutableLiveData<LeagueData>()
 
     fun loadLeagues () {
         viewModelScope.launch {
@@ -36,5 +38,15 @@ class SharedViewModel (application: Application): AndroidViewModel(application) 
         viewModelScope.launch {
             currentLeague.value = repository.getLeagueById(leagueId)
         }
+    }
+
+    fun getTeams(leagueId: Int): List<TeamData> {
+
+        return repository.getTeams(leagueId)
+    }
+
+    fun getTeam(teamId: Int): TeamData {
+
+        return repository.getTeam(teamId)
     }
 }

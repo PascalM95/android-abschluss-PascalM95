@@ -12,11 +12,12 @@ import coil.transform.RoundedCornersTransformation
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.data.datamodels.Team
+import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.ui.TeamFragmentDirections
 import com.google.android.material.card.MaterialCardView
 
 class TeamAdapter (
-    private val dataset: List<Team>,
+    private val dataset: List<TeamData>,
     ):RecyclerView.Adapter<TeamAdapter.ItemViewHolder>() {
 
         class ItemViewHolder ( val view: View): RecyclerView.ViewHolder(view) {

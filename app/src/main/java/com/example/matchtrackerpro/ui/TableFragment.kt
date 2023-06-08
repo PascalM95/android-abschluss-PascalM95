@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.adapter.TableAdapter
+import com.example.matchtrackerpro.data.datamodels.Team
+import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.databinding.FragmentTableBinding
 
 class TableFragment : Fragment() {
@@ -21,6 +23,8 @@ class TableFragment : Fragment() {
     private lateinit var binding: FragmentTableBinding
 
     private var leagueId = 0
+
+    private lateinit var teams: List<TeamData>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,16 +43,14 @@ class TableFragment : Fragment() {
         }
 
         if (leagueId != 0) {
-            viewModel.getLeagueById(leagueId)
+            teams = viewModel.getTeams(leagueId)
         }
 
-        viewModel.currentLeague.observe(viewLifecycleOwner) {
-            val adapter = TableAdapter(it.teams)
-            binding.rvTable.adapter = adapter
+        val adapter = TableAdapter(teams)
+        binding.rvTable.adapter = adapter
 
-           binding.fabBack.setOnClickListener {
-               findNavController().navigateUp()
-           }
+        binding.fabBack.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 }

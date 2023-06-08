@@ -42,9 +42,11 @@ class DetailTeamFragment : Fragment() {
             teamId = it.getInt("teamId")
         }
 
-        val team = viewModel.currentLeague.value?.teams?.find { it.teamId == teamId }
+        //val team = viewModel.currentLeague.value?.teams?.find { it.teamId == teamId }
 
-        binding.ivTeamLogo.load(team!!.img)
+        val team = viewModel.getTeam(teamId)
+
+        binding.ivTeamLogo.load(team.img)
         binding.tvTeamName.text = team.teamName
         binding.tvFounding.text = team.founding
         binding.tvColors.text = team.colors

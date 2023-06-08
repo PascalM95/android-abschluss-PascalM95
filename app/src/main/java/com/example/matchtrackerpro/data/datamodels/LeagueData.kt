@@ -4,10 +4,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-
-data class League (
+@Entity(tableName = "matchTracker_database")
+data class LeagueData (
+    @PrimaryKey
     val leagueId: Int,
     val leagueName: String,
-    val leagueImg: String,
-    val teams: List<Team>
-        )
+    val leagueImg: String
+    )
