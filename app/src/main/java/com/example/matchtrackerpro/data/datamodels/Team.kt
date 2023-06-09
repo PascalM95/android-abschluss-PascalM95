@@ -1,7 +1,5 @@
 package com.example.matchtrackerpro.data.datamodels
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 
 data class Team (
     val teamId: Int,

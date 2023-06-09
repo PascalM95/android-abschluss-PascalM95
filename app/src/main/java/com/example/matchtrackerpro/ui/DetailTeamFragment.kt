@@ -12,7 +12,6 @@ import coil.load
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.databinding.FragmentDetailTeamBinding
-import com.example.matchtrackerpro.databinding.FragmentTeamBinding
 
 class DetailTeamFragment : Fragment() {
 

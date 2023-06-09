@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.matchtrackerpro.R
-import com.example.matchtrackerpro.SharedViewModel
-import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.ui.TeamFragmentDirections
 import com.google.android.material.card.MaterialCardView

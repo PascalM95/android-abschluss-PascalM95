@@ -1,6 +1,5 @@
 package com.example.matchtrackerpro.adapter
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,11 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.matchtrackerpro.R
-import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.data.datamodels.League
-import com.example.matchtrackerpro.data.datamodels.Team
-import com.example.matchtrackerpro.databinding.LeagueItemBinding
-import com.example.matchtrackerpro.ui.HomeFragmentDirections
 import com.google.android.material.card.MaterialCardView
 
 class LeagueAdapter (

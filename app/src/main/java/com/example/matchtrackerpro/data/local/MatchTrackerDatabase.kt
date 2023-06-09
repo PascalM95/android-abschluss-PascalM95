@@ -4,9 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.matchtrackerpro.data.datamodels.League
 import com.example.matchtrackerpro.data.datamodels.LeagueData
-import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.data.datamodels.TeamData
 
 @Database(entities = [LeagueData::class, TeamData::class], version = 1)

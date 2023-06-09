@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.adapter.TableAdapter
-import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.databinding.FragmentTableBinding
 

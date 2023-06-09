@@ -9,13 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
-import com.example.matchtrackerpro.adapter.TableAdapter
 import com.example.matchtrackerpro.adapter.TeamAdapter
-import com.example.matchtrackerpro.data.Repository
-import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.data.datamodels.TeamData
-import com.example.matchtrackerpro.data.local.MatchTrackerDatabase
-import com.example.matchtrackerpro.data.remote.MatchTrackerApi
 import com.example.matchtrackerpro.databinding.FragmentTeamBinding
 
 

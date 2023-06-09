@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.matchtrackerpro.data.datamodels.League
 import com.example.matchtrackerpro.data.datamodels.LeagueData
-import com.example.matchtrackerpro.data.datamodels.Team
 import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.data.local.MatchTrackerDatabase
 import com.example.matchtrackerpro.data.remote.MatchTrackerApi

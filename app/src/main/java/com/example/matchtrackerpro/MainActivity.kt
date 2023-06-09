@@ -1,7 +1,5 @@
 package com.example.matchtrackerpro
 
-import android.annotation.SuppressLint
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
