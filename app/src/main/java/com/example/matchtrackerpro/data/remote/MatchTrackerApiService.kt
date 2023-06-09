@@ -1,6 +1,7 @@
 package com.example.matchtrackerpro.data.remote
 
 import com.example.matchtrackerpro.data.datamodels.League
+import com.example.matchtrackerpro.data.datamodels.LeagueResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -20,7 +21,7 @@ private val retrofit = Retrofit.Builder()
 
 interface MatchTrackerApiService {
     @GET("MatchTrackerPro.json")
-    suspend fun getLeagues(): List<League>
+    suspend fun getLeagues(): LeagueResponse
 }
 
 object MatchTrackerApi {

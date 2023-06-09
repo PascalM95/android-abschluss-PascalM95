@@ -18,8 +18,7 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
     suspend fun getLeagues() {
 
         try {
-            //database.matchTrackerDao.insert(api.retrofitService.getLeagues())
-            leagues.value = api.retrofitService.getLeagues()
+            leagues.value = api.retrofitService.getLeagues().league
 
             var listOfLeagues = mutableListOf<LeagueData>()
 
