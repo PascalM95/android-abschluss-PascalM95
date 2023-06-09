@@ -41,10 +41,10 @@ class LeagueAdapter (
         }
 
         holder.cvLeague.setOnClickListener {
-            val id = Bundle().apply { putInt("id", league.leagueId) }
+            val leagueId = Bundle().apply { putInt("leagueId", league.leagueId) }
 
             val navController = holder.view.findNavController()
-            navController.navigate(R.id.action_homeFragment_to_teamOrTableFragment, id)
+            navController.navigate(R.id.action_homeFragment_to_teamOrTableFragment, leagueId)
         }
     }
 
