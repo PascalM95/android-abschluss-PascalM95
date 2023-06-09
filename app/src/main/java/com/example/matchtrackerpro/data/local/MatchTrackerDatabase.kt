@@ -22,7 +22,7 @@ abstract class MatchTrackerDatabase : RoomDatabase() {
                         context.applicationContext,
                         MatchTrackerDatabase::class.java,
                         "matchTracker_database",
-                    ).build()
+                    ).allowMainThreadQueries().build()
                 }
             }
             return dbInstance

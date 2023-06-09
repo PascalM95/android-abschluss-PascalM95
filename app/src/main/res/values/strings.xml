@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">MatchTracker Pro</string>
     <string name="goals">Tore</string>
-    <string name="assists">Vorlagen</string>
-    <string name="yellow_cards">Gelbe Karten</string>
-    <string name="red_cards">Rote Karten</string>
+    <string name="team">Team</string>
+    <string name="matches">Spiele</string>
+    <string name="points">Punkte</string>
     <string name="table">Tabelle</string>
-    <string name="statistics">Statistiken</string>
     <string name="premier_league">Premier League</string>
     <string name="bundesliga">Bundesliga</string>
     <string name="ligue_1">Ligue 1 Uber Eats</string>

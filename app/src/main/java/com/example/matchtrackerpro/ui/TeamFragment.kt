@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.adapter.TeamAdapter
@@ -48,5 +49,9 @@ class TeamFragment : Fragment() {
 
         val adapter = TeamAdapter(teams)
         binding.rvTeams.adapter = adapter
+
+        binding.fabBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }

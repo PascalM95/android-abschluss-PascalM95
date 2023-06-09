@@ -31,7 +31,7 @@ class TableAdapter (
         override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
             val team = dataset[position]
 
-            holder.place.text = team.teamId.toString()
+            holder.place.text = (position + 1).toString()
             holder.team.text = team.teamName
             holder.games.text = team.games.toString()
             holder.goals.text = team.goals

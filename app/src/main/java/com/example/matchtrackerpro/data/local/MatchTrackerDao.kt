@@ -21,6 +21,9 @@ interface MatchTrackerDao {
     @Update
     suspend fun update (leagues: List<LeagueData>)
 
+    @Query("DELETE FROM team_table")
+    suspend fun deleteTeams()
+
     @Query("SELECT * FROM matchTracker_database WHERE leagueId = :leagueId")
     suspend fun getLeagueById(leagueId: Int): LeagueData
 

@@ -21,6 +21,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/dark_green"
+            app:strokeColor="@color/light_green"
             app:cardCornerRadius="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,10 +39,11 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:text="@string/team"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Team" />
+                     />
 
                 <TextView
                     android:id="@+id/tv_table_matches"
@@ -51,10 +53,10 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:text="@string/matches"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_table_team"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Spiele" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_table_goals"
@@ -64,10 +66,10 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:text="@string/goals"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_table_matches"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Tore" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_table_points"
@@ -77,10 +79,10 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:text="@string/points"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Punkte" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -92,7 +94,7 @@
             android:layout_height="0dp"
             android:layout_margin="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fab_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_table"

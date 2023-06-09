@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "team_table")
 data class TeamData (
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val teamId: Int,
     val leagueId: Int,
     val img: String,

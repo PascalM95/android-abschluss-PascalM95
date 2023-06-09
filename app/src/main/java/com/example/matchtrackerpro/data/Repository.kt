@@ -34,15 +34,17 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
             for (league in leagues.value!!) {
 
                 for (team in league.teams) {
-                    var currentTeam = TeamData(team.teamId, league.leagueId, team.img, team.teamName, team.games, team.goals, team.points, team.founding, team.colors, team.stadium, team.seats)
+                    var currentTeam = TeamData(0, league.leagueId, team.img, team.teamName, team.games, team.goals, team.points, team.founding, team.colors, team.stadium, team.seats)
 
                     listOfTeams.add(currentTeam)
                 }
-                database.matchTrackerDao.insertTeams(listOfTeams.toList())
             }
+            database.matchTrackerDao.deleteTeams()
+
+            database.matchTrackerDao.insertTeams(listOfTeams.toList())
 
         } catch (e: Exception) {
-            Log.e(TAG, "Leagues couldn't be loaded. $e")
+            Log.e(TAG, "Leagues couldn't be loaded. \n${e.message}")
         }
     }
 
