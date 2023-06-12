@@ -46,6 +46,7 @@ class TeamAdapter (
         }
     }
 
+    //gibt die Anzahl der Elemente im Dataset zurück
     override fun getItemCount(): Int {
         return dataset.size
     }

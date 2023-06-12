@@ -27,7 +27,7 @@ class SharedViewModel (application: Application): AndroidViewModel(application) 
     fun loadLeagues () {
         viewModelScope.launch {
             repository.getLeagues()
-            Log.i(TAG, "Leagues been loaded.")
+            Log.d(TAG, "Leagues been loaded.")
         }
     }
 

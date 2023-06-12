@@ -20,12 +20,12 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
         try {
             leagues.value = api.retrofitService.getLeagues().league
 
-            var listOfLeagues = mutableListOf<LeagueData>()
+            val listOfLeagues = mutableListOf<LeagueData>()
 
-            var listOfTeams = mutableListOf<TeamData>()
+            val listOfTeams = mutableListOf<TeamData>()
 
             for (league in leagues.value!!) {
-                var currentLeague = LeagueData(league.leagueId, league.leagueName, league.leagueImg)
+                val currentLeague = LeagueData(league.leagueId, league.leagueName, league.leagueImg)
 
                 listOfLeagues.add(currentLeague)
             }
@@ -34,7 +34,7 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
             for (league in leagues.value!!) {
 
                 for (team in league.teams) {
-                    var currentTeam = TeamData(0, league.leagueId, team.img, team.teamName, team.games, team.goals, team.points, team.founding, team.colors, team.stadium, team.seats)
+                    val currentTeam = TeamData(0, league.leagueId, team.img, team.teamName, team.games, team.goals, team.points, team.founding, team.colors, team.stadium, team.seats)
 
                     listOfTeams.add(currentTeam)
                 }
@@ -60,23 +60,5 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
 
     suspend fun getLeagueById(leagueId: Int): LeagueData {
         return database.matchTrackerDao.getLeagueById(leagueId)
-    }
-
-    suspend fun insert (leagues: List<LeagueData>) {
-
-        try {
-            database.matchTrackerDao.insert(leagues)
-        } catch (e: Exception) {
-            Log.d(TAG, "Failed to insert into Database: $e")
-        }
-    }
-
-    suspend fun update (leagues: List<LeagueData>) {
-
-        try {
-            database.matchTrackerDao.update(leagues)
-        } catch (e: Exception) {
-            Log.d(TAG, "Failed to update Database: $e")
-        }
     }
 }

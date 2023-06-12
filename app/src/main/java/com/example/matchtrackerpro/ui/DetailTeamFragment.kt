@@ -21,10 +21,6 @@ class DetailTeamFragment : Fragment() {
 
     private var teamId = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,8 +36,6 @@ class DetailTeamFragment : Fragment() {
         arguments?.let {
             teamId = it.getInt("teamId")
         }
-
-        //val team = viewModel.currentLeague.value?.teams?.find { it.teamId == teamId }
 
         val team = viewModel.getTeam(teamId)
 
