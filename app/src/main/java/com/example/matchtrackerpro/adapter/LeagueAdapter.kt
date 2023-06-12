@@ -14,15 +14,17 @@ import com.example.matchtrackerpro.R
 import com.example.matchtrackerpro.data.datamodels.League
 import com.google.android.material.card.MaterialCardView
 
-class LeagueAdapter (
+class LeagueAdapter(
     private val dataset: List<League>,
-    ): RecyclerView.Adapter<LeagueAdapter.ItemViewHolder>() {
+) : RecyclerView.Adapter<LeagueAdapter.ItemViewHolder>() {
 
-    class ItemViewHolder (val view: View): RecyclerView.ViewHolder(view) {
+    //Hier wird der ViewHolder für die Elemente aus der RecyclerView defifniert
+    class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val imgView: ImageView = view.findViewById(R.id.iv_league)
         val cvLeague: MaterialCardView = view.findViewById(R.id.cv_league)
     }
 
+    //Hier wird der Adapter festgelegt und der ItemViewHolder m.H. des Adapters erstellt
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         val leagueAdapterLayout = LayoutInflater.from(parent.context)
@@ -32,14 +34,20 @@ class LeagueAdapter (
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+
+        //Hier wird die aktuelle Liga aus dem dataset geholt
         val league = dataset[position]
 
+        //Hier wird die imgUri in ein Uri-Objekt konvertiert und das Schema der Uri wird zu https geändert
         val imgUri = league.leagueImg.toUri().buildUpon().scheme("https").build()
 
+        //Hier werden die Bilder in die ImageView geladen und die Ecken abgerundet
         holder.imgView.load(imgUri) {
             transformations(RoundedCornersTransformation(10f))
         }
 
+        // Es wird ein setOnClickListener auf die CardView gesetzt, in welchem die Navigation zum nächsten Fragment stattfindet.
+        // Mit der Navigation wird zusätzlich eine leagueId übergeben.
         holder.cvLeague.setOnClickListener {
             val leagueId = Bundle().apply { putInt("leagueId", league.leagueId) }
 

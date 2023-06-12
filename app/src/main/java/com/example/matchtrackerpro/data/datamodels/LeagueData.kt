@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "matchTracker_database")
-data class LeagueData (
+data class LeagueData(
     @PrimaryKey
     val leagueId: Int,
     val leagueName: String,
     val leagueImg: String
-    )
+)

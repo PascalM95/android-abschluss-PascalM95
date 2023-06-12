@@ -13,13 +13,13 @@ import com.example.matchtrackerpro.data.datamodels.TeamData
 interface MatchTrackerDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert (leagues: List<LeagueData>)
+    suspend fun insert(leagues: List<LeagueData>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertTeams (teams: List<TeamData>)
+    suspend fun insertTeams(teams: List<TeamData>)
 
     @Update
-    suspend fun update (leagues: List<LeagueData>)
+    suspend fun update(leagues: List<LeagueData>)
 
     @Query("DELETE FROM team_table")
     suspend fun deleteTeams()
@@ -31,7 +31,7 @@ interface MatchTrackerDao {
     fun getAllLeagues(): LiveData<List<LeagueData>>
 
     @Query("DELETE FROM matchTracker_database WHERE leagueId = :leagueId")
-    suspend fun deleteById (leagueId: Int)
+    suspend fun deleteById(leagueId: Int)
 
     @Query("SELECT * FROM team_table WHERE leagueId = :leagueId")
     fun getTeamsById(leagueId: Int): List<TeamData>

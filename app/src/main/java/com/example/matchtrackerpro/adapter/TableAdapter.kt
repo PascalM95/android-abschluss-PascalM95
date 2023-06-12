@@ -12,6 +12,7 @@ class TableAdapter(
     private val dataset: List<TeamData>,
 ) : RecyclerView.Adapter<TableAdapter.ItemViewHolder>() {
 
+    //Hier wird der ViewHolder für die Elemente aus der RecyclerView defifniert
     class ItemViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val place: TextView = view.findViewById(R.id.tv_place)
         val team: TextView = view.findViewById(R.id.tv_team)
@@ -20,6 +21,7 @@ class TableAdapter(
         val points: TextView = view.findViewById(R.id.tv_points)
     }
 
+    //Hier wird der Adapter festgelegt und der ItemViewHolder m.H. des Adapters erstellt
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
 
         val tableAdapterLayout = LayoutInflater.from(parent.context)
@@ -28,8 +30,11 @@ class TableAdapter(
         return ItemViewHolder(tableAdapterLayout)
     }
 
-
+    // Der ItemViewHolder wird mit den Daten aus dem dataset synchronisiert,
+    // indem sie den entsprechenden Werten zugeordnet werden.
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+
+        //Hier wird das aktuelle Team aus dem dataset geholt
         val team = dataset[position]
 
         holder.place.text = (position + 1).toString()

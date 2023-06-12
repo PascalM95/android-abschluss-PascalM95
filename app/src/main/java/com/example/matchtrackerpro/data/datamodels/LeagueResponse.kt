@@ -1,5 +1,5 @@
 package com.example.matchtrackerpro.data.datamodels
 
-data class LeagueResponse (
+data class LeagueResponse(
     val league: List<League>
-        )
+)

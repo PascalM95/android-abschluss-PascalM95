@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "team_table")
-data class TeamData (
+data class TeamData(
     @PrimaryKey(autoGenerate = true)
     val teamId: Int,
     val leagueId: Int,
@@ -17,4 +17,4 @@ data class TeamData (
     val colors: String,
     val stadium: String,
     val seats: String
-    )
+)

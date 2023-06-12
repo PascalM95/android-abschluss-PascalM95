@@ -1,7 +1,7 @@
 package com.example.matchtrackerpro.data.datamodels
 
 
-data class Team (
+data class Team(
     val teamId: Int,
     val img: String,
     val teamName: String,
@@ -12,4 +12,4 @@ data class Team (
     val colors: String,
     val stadium: String,
     val seats: String
-        )
+)

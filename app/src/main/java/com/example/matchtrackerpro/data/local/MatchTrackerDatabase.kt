@@ -17,7 +17,7 @@ abstract class MatchTrackerDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context): MatchTrackerDatabase {
             synchronized(MatchTrackerDatabase::class.java) {
-                if(!::dbInstance.isInitialized) {
+                if (!::dbInstance.isInitialized) {
                     dbInstance = Room.databaseBuilder(
                         context.applicationContext,
                         MatchTrackerDatabase::class.java,
