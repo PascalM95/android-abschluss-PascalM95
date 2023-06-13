@@ -46,10 +46,14 @@ class TeamFragment : Fragment() {
             leagueId = it.getInt("leagueId")
         }
 
+        //Es wird überprüft, ob die leagueId nicht 0 ist, wenn dies der Fall ist wird die getTeams-Funktion
+        //aus dem ViewModel aufgerufen und die leagueId wird als Parameter übergeben
         if (leagueId != 0) {
             teams = viewModel.getTeams(leagueId)
         }
 
+        //ein neuer Adapter wird erstellt und mit dem übergebenen Parameter teams initialisiert
+        //Anschließend wird der neue Adapter der RecyclerView zugewiesen
         val adapter = TeamAdapter(teams)
         binding.rvTeams.adapter = adapter
 

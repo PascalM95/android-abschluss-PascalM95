@@ -36,10 +36,16 @@ class TeamOrTableFragment : Fragment() {
             leagueId = it.getInt("leagueId")
         }
 
+        //ein SetOnClickListener wird auf die CardView Teams gesetzt
+        //durch diesen findet die Navigation zum nächsten Fragment statt
+        //zusätzlich wird der Parameter leagueId mit übergeben
         binding.cvTeams.setOnClickListener {
             findNavController().navigate(TeamOrTableFragmentDirections.actionTeamOrTableFragmentToTeamFragment(leagueId))
         }
 
+        //ein SetOnClickListener wird auf die CardView Table gesetzt
+        //durch diesen findet die Navigation zum nächsten Fragment statt
+        //zusätzlich wird der Parameter leagueId mit übergeben
         binding.cvTable.setOnClickListener {
             findNavController().navigate(
                 TeamOrTableFragmentDirections.actionTeamOrTableFragmentToTableFragment(leagueId))
