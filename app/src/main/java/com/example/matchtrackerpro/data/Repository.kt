@@ -9,12 +9,18 @@ import com.example.matchtrackerpro.data.local.MatchTrackerDatabase
 import com.example.matchtrackerpro.data.remote.MatchTrackerApi
 import kotlin.Exception
 
+// Tag zum identifizieren der Log-Nachricht
 const val TAG = "Repository"
 
 class Repository (private val api: MatchTrackerApi, private val database: MatchTrackerDatabase) {
 
+    //LiveData- Objekt, die eine Liste von League-Objekten enthält
     var leagues = MutableLiveData<List<League>>()
 
+    //Die  "getLeagues" Funktion versucht, Ligen abzurufen und in eine LiveData-Variable mit dem Namen "leagues" zu setzen.
+    //Anschließend werden die empfangenen Ligen in eine Liste von "LeagueData"-Objekten umgewandelt und in die Datenbank eingefügt.
+    //Danach werden die Teams jeder Liga ebenfalls in eine Liste von "TeamData"-Objekten umgewandelt und in die Datenbank eingefügt.
+    //Falls ein Fehler auftritt, wird eine entsprechende Fehlermeldung protokolliert.
     suspend fun getLeagues() {
 
         try {
@@ -48,16 +54,19 @@ class Repository (private val api: MatchTrackerApi, private val database: MatchT
         }
     }
 
+    //Funktion die, anhand des übergebenen Parameters leagueId, alle zugehörigen Teams aus der Datenbank abruft.
     fun getTeams(leagueId: Int): List<TeamData> {
 
         return database.matchTrackerDao.getTeamsById(leagueId)
     }
 
+    //Funktion, die anhand des übergebenen Parameters teamId, das zugehörige Team aus der Datenbank abruft.
     fun getTeam(teamId: Int): TeamData {
 
         return database.matchTrackerDao.getTeamById(teamId)
     }
 
+    //Funktion, die anhand des übergebenen Parameters leagueId, die zugehörige Liga aus der Datenbank abruft.
     suspend fun getLeagueById(leagueId: Int): LeagueData {
         return database.matchTrackerDao.getLeagueById(leagueId)
     }
