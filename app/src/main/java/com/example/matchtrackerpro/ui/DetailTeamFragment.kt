@@ -15,12 +15,16 @@ import com.example.matchtrackerpro.databinding.FragmentDetailTeamBinding
 
 class DetailTeamFragment : Fragment() {
 
+    //Instanz des SharedViewModel wird erstellt
     private val viewModel: SharedViewModel by activityViewModels()
 
+    //Binding wird deklariert
     private lateinit var binding: FragmentDetailTeamBinding
 
+    //Variable teamId wird mit dem Wert 0 initialisiert
     private var teamId = 0
 
+    //Das Layout wird erstellt und Binding wird dem Layout zugewiesen
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,12 +37,15 @@ class DetailTeamFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //der Wert des teamId Arguments wird aufgerufen und der variable teamId zugewiesen
         arguments?.let {
             teamId = it.getInt("teamId")
         }
 
+        //Methode getTeam wird über das ViewModel aufgerufen und der Variable team zugewiesen
         val team = viewModel.getTeam(teamId)
 
+        //Die Daten werden, mit Hilfe von Binding, in die entsprechenden Ansichten gesetzt
         binding.ivTeamLogo.load(team.img)
         binding.tvTeamName.text = team.teamName
         binding.tvFounding.text = team.founding
@@ -46,6 +53,7 @@ class DetailTeamFragment : Fragment() {
         binding.tvStadium.text = team.stadium
         binding.tvSeats.text = team.seats
 
+        //SetOnClickListener wird auf den fabBack-Button gesetzt, dieser führt die Navigation zum vorherigen Bildschirm durch
         binding.fabBack.setOnClickListener {
             findNavController().navigateUp()
         }

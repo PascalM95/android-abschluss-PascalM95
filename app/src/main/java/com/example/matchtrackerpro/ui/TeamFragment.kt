@@ -14,31 +14,34 @@ import com.example.matchtrackerpro.adapter.TeamAdapter
 import com.example.matchtrackerpro.data.datamodels.TeamData
 import com.example.matchtrackerpro.databinding.FragmentTeamBinding
 
-
 class TeamFragment : Fragment() {
 
+    //Instanz des SharedViewModel wird erstellt
     private val viewModel: SharedViewModel by activityViewModels()
 
+    //Binding wird deklariert
     private lateinit var binding: FragmentTeamBinding
 
+    //Variable leagueId wird mit dem Wert 0 initialisiert
     private var leagueId = 0
 
+    //Eine lateinit Variable wird erstellt, sie enthält eine Liste von TeamData und wird erst später initialisiert
     private lateinit var teams: List<TeamData>
 
+    //Das Layout wird erstellt und Binding wird dem Layout zugewiesen
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_team, container, false
-        )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_team, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //der Wert des leagueId Arguments wird aufgerufen und der variable leagueId zugewiesen
         arguments?.let {
             leagueId = it.getInt("leagueId")
         }
@@ -50,6 +53,7 @@ class TeamFragment : Fragment() {
         val adapter = TeamAdapter(teams)
         binding.rvTeams.adapter = adapter
 
+        //SetOnClickListener wird auf den fabBack-Button gesetzt, dieser führt die Navigation zum vorherigen Bildschirm durch
         binding.fabBack.setOnClickListener {
             findNavController().navigateUp()
         }
