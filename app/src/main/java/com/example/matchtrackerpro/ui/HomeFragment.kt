@@ -12,7 +12,7 @@ import com.example.matchtrackerpro.SharedViewModel
 import com.example.matchtrackerpro.adapter.LeagueAdapter
 import com.example.matchtrackerpro.databinding.FragmentHomeBinding
 
-class HomeFragment() : Fragment() {
+class HomeFragment : Fragment() {
 
     //Instanz des SharedViewModel wird erstellt
     private val viewModel: SharedViewModel by activityViewModels()
